@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index.html');
+app.get('/', (req, res) => {
+  res.send('Hello from Cloudtype!');
 });
 
-module.exports = router;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
